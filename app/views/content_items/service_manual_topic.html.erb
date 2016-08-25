@@ -5,7 +5,23 @@
   <%= render 'shared/service_manual_custom_phase_message', phase: @content_item.phase %>
 <% end %>
 
-<%= render 'govuk_component/breadcrumbs', breadcrumbs: @content_item.breadcrumbs %>
+<%
+  breadcrumbs = @content_item.breadcrumbs || []
+%>
+<div class="breadcrumbs">
+  <ol>
+  <% breadcrumbs.each do |crumb| %>
+    <li>
+      <% if crumb[:url] %>
+        <a href="<%= crumb[:url] %>"><%= crumb[:title] %></a>
+      <% else %>
+        <%= crumb[:title] %>
+      <% end %>
+    </li>
+  <% end %>
+  </ol>
+</div>
+
 
 <% content_for :meta_description, @content_item.description %>
 

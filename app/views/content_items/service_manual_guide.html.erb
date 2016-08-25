@@ -5,7 +5,7 @@
   <%= render 'shared/service_manual_custom_phase_message', phase: @content_item.phase %>
 <% end %>
 
-<%= render 'govuk_component/breadcrumbs', breadcrumbs: @content_item.breadcrumbs %>
+<%# render 'govuk_component/breadcrumbs', breadcrumbs: @content_item.breadcrumbs %>
 
 <!-- Page title and contact -->
 <div class="grid-row">
@@ -75,7 +75,7 @@
   <div class="column-two-thirds">
 
     <div class="govspeak-wrapper">
-      <%= render 'govuk_component/govspeak', content: @content_item.body.html_safe %>
+      <%# render 'govuk_component/govspeak', content: @content_item.body.html_safe %>
     </div>
 
     <div class="change-history" data-module="toggle">

@@ -1,8 +1,8 @@
 require 'gds_api/content_store'
-require 'slimmer/headers'
+# require 'slimmer/headers'
 
 class ContentItemsController < ApplicationController
-  include Slimmer::Headers
+  # include Slimmer::Headers
   rescue_from GdsApi::HTTPForbidden, with: :error_403
 
   def show
@@ -15,11 +15,11 @@ class ContentItemsController < ApplicationController
     #   <input class="submit" type="submit" value="Search">
     #   <input type="hidden" name="filter_manual" value="/service-manual">
     # </form>
-    set_slimmer_headers(
-      search_parameters: {
-        "filter_manual" => "/service-manual"
-      }.to_json,
-    )
+    # set_slimmer_headers(
+    #   search_parameters: {
+    #     "filter_manual" => "/service-manual"
+    #   }.to_json,
+    # )
 
     if load_content_item
       set_expiry

@@ -1,0 +1,10 @@
+.link-unit {
+  &__title {
+    @include core-19;
+    font-weight: bold;
+  }
+
+  &__description {
+    @include core-16($line-height: 1.5);
+  }
+}

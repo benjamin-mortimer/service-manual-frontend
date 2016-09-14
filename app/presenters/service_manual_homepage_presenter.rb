@@ -4,6 +4,6 @@ class ServiceManualHomepagePresenter < ContentItemPresenter
   end
 
   def topics
-    @_topics ||= links["service_manual_topics"] || []
+    @_topics ||= links["children"] || []
   end
 end

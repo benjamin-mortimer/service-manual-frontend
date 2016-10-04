@@ -39,3 +39,14 @@
 <% end %>
 </div>
 <% end %>
+
+<h2>Recently updated guides</h2>
+<ul>
+  <% recently_updated_guides.each do |guide| %>
+  <li>
+    <%= link_to guide['title'], guide['_id'] %>
+    part of <%= guide['service_manual_topic'] %>
+    <%= time_tag(DateTime.iso8601(guide['public_timestamp']), "#{time_ago_in_words(guide['public_timestamp'])} ago") %>
+  </li>
+  <% end %>
+</ul>
